@@ -2,14 +2,16 @@ import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { Page } from './utils/styles';
 import { RegisterPage } from './pages/RegisterPage';
+import { LoginPage } from './pages/LoginPage';
 
 export const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/register' element={<RegisterPage />}></Route>
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/login' element={<LoginPage />} />
         <Route
-          path='conversations'
+          path='/conversations'
           element={
             <div>
               <div>Conversations</div>
