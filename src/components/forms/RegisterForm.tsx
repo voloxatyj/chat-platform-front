@@ -1,3 +1,4 @@
+import { useForm } from 'react-hook-form';
 import {
   Button,
   InputContainer,
@@ -7,25 +8,56 @@ import {
 import styles from './index.module.scss';
 
 export const RegisterForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = () => {};
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <InputContainer>
         <InputLabel htmlFor='email'>Email</InputLabel>
-        <InputField type='email' id='email' />
+        <InputField
+          type='email'
+          id='email'
+          {...register('email', {
+            required: 'Email is required',
+          })}
+        />
       </InputContainer>
       <section className={styles.nameFieldRow}>
         <InputContainer>
           <InputLabel htmlFor='firstName'>First Name</InputLabel>
-          <InputField type='firstName' id='firstName' />
+          <InputField
+            type='firstName'
+            id='firstName'
+            {...register('firstName', {
+              required: 'First Name is required',
+            })}
+          />
         </InputContainer>
         <InputContainer>
           <InputLabel htmlFor='lastName'>Last Name</InputLabel>
-          <InputField type='lastName' id='lastName' />
+          <InputField
+            type='lastName'
+            id='lastName'
+            {...register('lastName', {
+              required: 'Last Name is required',
+            })}
+          />
         </InputContainer>
       </section>
       <InputContainer>
         <InputLabel htmlFor='password'>Password</InputLabel>
-        <InputField type='password' id='password' />
+        <InputField
+          type='password'
+          id='password'
+          {...register('password', {
+            required: 'Password is required',
+          })}
+        />
       </InputContainer>
       <Button>Create My Account</Button>
     </form>
