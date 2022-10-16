@@ -1,10 +1,12 @@
 import { useForm } from 'react-hook-form';
+import { postRegisterUser } from '../../utils/api';
 import {
   Button,
   InputContainer,
   InputField,
   InputLabel,
 } from '../../utils/styles';
+import { CreateUserParams } from '../../utils/types';
 import styles from './index.module.scss';
 
 export const RegisterForm = () => {
@@ -12,8 +14,14 @@ export const RegisterForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = () => {};
+  } = useForm<CreateUserParams>();
+  const onSubmit = async (data: CreateUserParams) => {
+    try {
+      await postRegisterUser(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -45,6 +53,16 @@ export const RegisterForm = () => {
             id='lastName'
             {...register('lastName', {
               required: 'Last Name is required',
+            })}
+          />
+        </InputContainer>
+        <InputContainer>
+          <InputLabel htmlFor='userName'>User Name</InputLabel>
+          <InputField
+            type='userName'
+            id='userName'
+            {...register('userName', {
+              required: 'User Name is required',
             })}
           />
         </InputContainer>
