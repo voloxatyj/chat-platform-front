@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { postLoginUser } from '../../utils/api';
 import {
   Button,
@@ -17,9 +17,11 @@ export const LoginForm = () => {
     formState: { errors },
   } = useForm<UserCredentialsParams>();
 
+  const navigate = useNavigate();
   const onSubmit = async (data: UserCredentialsParams) => {
     try {
       await postLoginUser(data);
+      navigate('/conversations');
     } catch (error) {
       console.log(error);
     }

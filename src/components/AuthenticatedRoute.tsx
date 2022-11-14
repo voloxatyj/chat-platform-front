@@ -8,9 +8,13 @@ export const AuthenticatedRoute: FC<React.PropsWithChildren> = ({
   const location = useLocation();
   const { loading, user } = useAuth();
 
-  if (loading) <>loading</>;
+  if (loading) {
+    return <>{loading}</>;
+  }
 
-  if (user) <>{children}</>;
+  if (user) {
+    return <>{children}</>;
+  }
 
   return <Navigate to='/login' state={{ from: location }} replace />;
 };
