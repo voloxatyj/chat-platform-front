@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { postRegisterUser } from '../../utils/api';
+import { RegisterUser } from '../../utils/api';
 import {
   Button,
   InputContainer,
@@ -17,7 +17,7 @@ export const RegisterForm = () => {
   } = useForm<CreateUserParams>();
   const onSubmit = async (data: CreateUserParams) => {
     try {
-      await postRegisterUser(data);
+      await RegisterUser(data);
     } catch (error) {
       console.log(error);
     }
