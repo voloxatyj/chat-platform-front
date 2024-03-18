@@ -6,7 +6,7 @@ import { Conversation } from '../../utils/types';
 import defaultAvatar from '../../__assets__/default_avatar.jpg';
 
 import styles from './index.module.scss';
-import { ConversationSidebarItemDetails, ConversationSidebarItemStyle } from '../../utils/styles/conversation';
+import { ConversationSidebarItemDetails, ConversationSidebarItemStyle } from '../../styles/conversation';
 
 type Props = {
   conversation: Conversation;

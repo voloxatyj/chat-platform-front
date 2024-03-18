@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { ThemeProvider } from "styled-components";
-import { LayoutPage } from "../utils/styles";
-import { DarkTheme, LightTheme } from '../utils/styles/themes';
+import { LayoutPage } from "../styles";
+import { DarkTheme, LightTheme } from '../styles/themes';
 import { SelectableTheme } from '../utils/types';
 
 export const AppPage = () => {

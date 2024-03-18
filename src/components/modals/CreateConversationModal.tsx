@@ -6,7 +6,7 @@ import {
   FC,
   useEffect,
 } from 'react';
-import { OverlayStyle } from '../../utils/styles';
+import { OverlayStyle } from '../../styles';
 import { ModalBody, ModalContainer, ModalHeader } from '.';
 import { CreateConversationForm } from '../forms/CreateConversationForm';
 import { MdClose } from 'react-icons/md';

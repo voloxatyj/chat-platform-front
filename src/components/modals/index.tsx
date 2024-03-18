@@ -3,7 +3,7 @@ import {
   ModalContentBodyStyle,
   ModalContainerStyle,
   ModalHeaderStyle,
-} from '../../utils/styles';
+} from '../../styles/modal';
 
 export const ModalHeader: FC<PropsWithChildren> = ({ children }) => (
   <ModalHeaderStyle>{children}</ModalHeaderStyle>

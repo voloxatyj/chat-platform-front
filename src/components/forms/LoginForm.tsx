@@ -2,11 +2,11 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { LoginUser } from '../../utils/api';
 import {
-  Button,
   InputContainer,
   InputField,
   InputLabel,
-} from '../../utils/styles';
+} from '../../styles/input';
+import { Button } from '../../styles/common'
 import { UserCredentialsParams } from '../../utils/types';
 import styles from './index.module.scss';
 

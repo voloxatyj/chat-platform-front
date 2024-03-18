@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form';
-import { RegisterUser } from '../../utils/api';
+import { Button } from '../../styles/common';
 import {
-  Button,
   InputContainer,
   InputField,
   InputLabel,
-} from '../../utils/styles';
+} from '../../styles/input';
+import { RegisterUser } from '../../utils/api';
 import { CreateUserParams } from '../../utils/types';
 import styles from './index.module.scss';
 

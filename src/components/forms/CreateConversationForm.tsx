@@ -1,10 +1,9 @@
 import {
-  Button,
   InputContainer,
   InputField,
   InputLabel,
-  TextField,
-} from '../../utils/styles';
+} from '../../styles/input';
+import { Button, TextField } from '../../styles/common';
 import styles from './index.module.scss';
 
 export const CreateConversationForm = () => {

@@ -4,7 +4,7 @@ import {
   ConversationSidebarContainer,
   ConversationSidebarStyles,
   ConversationSidebarHeaderStyle,
-} from '../../utils/styles/conversation';
+} from '../../styles/conversation';
 import { Conversation } from '../../utils/types';
 import { ConversationSidebarItem } from '../conversations/ConversationSidebarItem';
 import { CreateConversationModal } from '../modals/CreateConversationModal';
