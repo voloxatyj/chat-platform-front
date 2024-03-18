@@ -1,15 +1,27 @@
 import { Outlet, useParams } from 'react-router-dom';
 import { ConversationPanel } from '../components/conversations/ConversationPanel';
-import { ConversationSidebar } from '../components/conversations/ConversationSidebar';
+import { ConversationSidebar } from '../components/sidebars/ConversationSidebar';
 import { Page } from '../utils/styles';
-import mockConversations from '../__mocks__/conversations';
+import { useEffect, useState } from 'react';
+import { Conversation } from '../utils/types';
+import { getConversations } from '../utils/api';
 
 export const ConversationPage = () => {
   const { id } = useParams();
+  const [conversations, setConversations] = useState<Conversation[]>([]);
+
+  useEffect(() => {
+    getConversations()
+    .then(({data}) => {
+      setConversations(data);
+      console.log(data);
+    })
+    .catch((err) => console.log(err));
+  }, [])
 
   return (
     <Page>
-      <ConversationSidebar conversations={mockConversations} />
+      <ConversationSidebar conversations={conversations} />
       {!id && <ConversationPanel />}
       <Outlet />
     </Page>

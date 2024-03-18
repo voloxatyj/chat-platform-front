@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext } from '../utils/context/AuthContext';
-import { ConversationChannelPageStyle } from '../utils/styles';
+import { ConversationChannelPageStyle } from '../utils/styles/conversation';
 
 export const ConversationChannelPage = () => {
   const { user } = useContext(AuthContext);

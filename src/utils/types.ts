@@ -20,8 +20,16 @@ export type UserCredentialsParams = {
 export type User = {
   id: number;
   email: string;
-  firstName: string;
-  lastName: string;
-  userName: string;
+  first_name: string;
+  last_name: string;
+  user_name: string;
   password: string;
 };
+
+export type Conversation = {
+  id: number;
+  creator: User;
+  recipient: User;
+}
+
+export type SelectableTheme = 'dark' | 'light';

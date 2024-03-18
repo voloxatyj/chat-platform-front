@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
 import {
-  ModalBodyStyle,
+  ModalContentBodyStyle,
   ModalContainerStyle,
   ModalHeaderStyle,
 } from '../../utils/styles';
@@ -10,7 +10,7 @@ export const ModalHeader: FC<PropsWithChildren> = ({ children }) => (
 );
 
 export const ModalBody: FC<PropsWithChildren> = ({ children }) => (
-  <ModalBodyStyle>{children}</ModalBodyStyle>
+  <ModalContentBodyStyle>{children}</ModalContentBodyStyle>
 );
 
 export const ModalContainer: FC<PropsWithChildren> = ({ children }) => (
