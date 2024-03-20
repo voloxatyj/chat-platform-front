@@ -33,3 +33,16 @@ export type Conversation = {
 }
 
 export type SelectableTheme = 'dark' | 'light';
+
+export type Message = {
+  id: number;
+  content?: string;
+  created_at: string;
+  author: User;
+  conversation: Conversation;
+};
+
+export type FetchMessagePayload = {
+  id: number;
+  messages: Message[];
+};

@@ -22,7 +22,7 @@ export const ConversationSidebar: FC<Props> = ({ conversations }) => {
       <ConversationSidebarStyles>
         <ConversationSidebarHeaderStyle>
           <h1>Conversations</h1>
-          <div onClick={() => setShowModal(!showModal)}>
+          <div onClick={() => setShowModal(!showModal)} style={{ cursor: 'pointer' }}>
             <TbEdit size={40} />
           </div>
         </ConversationSidebarHeaderStyle>

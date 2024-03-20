@@ -15,3 +15,7 @@ export type ConversationSidebarItemProps = {
 export type ModalProps = Partial<{
   showModal: boolean;
 }>;
+
+export type MessageItemContentProps = Partial<{
+  padding: string;
+}>;

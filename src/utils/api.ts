@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { Conversation, CreateUserParams, User, UserCredentialsParams } from './types';
+import { Conversation, CreateUserParams, FetchMessagePayload, Message, User, UserCredentialsParams } from './types';
 
 const { REACT_APP_API_URL } = process.env;
 const axiosClient = axios.create({ baseURL: REACT_APP_API_URL });
@@ -29,3 +29,9 @@ export const getAuthUser = () => axiosClient.get<User>(`/auth/status`, config);
 
 export const getConversations = () =>
   axiosClient.get<Conversation[]>(`/conversations`, config);
+
+export const getConversationMessages = (conversationId: number) =>
+  axiosClient.get<FetchMessagePayload>(
+    `/messages/${conversationId}`,
+    config
+  );

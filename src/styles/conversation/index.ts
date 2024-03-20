@@ -7,6 +7,9 @@ export const ConversationChannelPageStyle = styled.div`
   height: 100%;
   width: 100%;
   overflow: hidden;
+  /*TODO Don't forget change it*/
+  left: 520px;
+  position: absolute;
 `;
 
 export const ConversationSidebarContainer = styled.div`
@@ -39,6 +42,8 @@ export const ConversationSidebarHeaderStyle = styled.header`
   left: 90px;
   z-index: 9;
   background-color: inherit;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const ConversationSidebarItemStyle = styled.div<ConversationSidebarItemProps>`
